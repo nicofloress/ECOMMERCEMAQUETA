@@ -1,9 +1,20 @@
-// Import the functions you need from the SDKs you need
+/**
+ * Configuración de Firebase
+ * 
+ * Este archivo inicializa la conexión con Firebase para:
+ * - Authentication (autenticación de usuarios)
+ * - Firestore (base de datos, usado en el backend)
+ * 
+ * Las credenciales se obtienen de Firebase Console:
+ * Project Settings > General > Your apps > Web app
+ */
+
+// Importar funciones necesarias de Firebase SDK
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
-// Your web app's Firebase configuration
-// TODO: Replace with your project config from Firebase Console -> Project Settings -> General -> Your apps
+// Configuración de tu aplicación web de Firebase
+// IMPORTANTE: Estas credenciales son específicas de tu proyecto
 const firebaseConfig = {
     apiKey: "AIzaSyBO-v77HC8JZI_sgoV3YTHPSpih000KSBo",
     authDomain: "ecommerce-4e23f.firebaseapp.com",
@@ -14,11 +25,11 @@ const firebaseConfig = {
     measurementId: "G-GG5M52XLDE"
 };
 
-
-
-
-
-// Initialize Firebase
+// Inicializar Firebase
 const app = initializeApp(firebaseConfig);
+
+// Exportar la instancia de autenticación para usar en toda la app
 export const auth = getAuth(app);
+
+// Exportar la app por si se necesita en otros módulos
 export default app;
